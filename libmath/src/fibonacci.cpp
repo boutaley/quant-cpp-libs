@@ -40,11 +40,6 @@ namespace by_fibonacci {
 
 	}
 
-	uint64_t fibonacci_memoized(uint64_t n) {
-		std::optional<std::vector<uint64_t>> memo;
-		return fibonacci_memoized(n, memo);
-	}
-
 	static uint64_t fibonacci_memoized(uint64_t n, std::optional<std::vector<uint64_t>>& memo) {
 
 		if (n > 93) {
@@ -68,6 +63,11 @@ namespace by_fibonacci {
 		}
 
 		return (*memo)[n];
+	}
+
+	uint64_t fibonacci_memoized(uint64_t n) {
+		std::optional<std::vector<uint64_t>> memo;
+		return fibonacci_memoized(n, memo);
 	}
 
 	static std::pair<uint64_t, uint64_t> fib_pair(uint64_t n) {

@@ -1,0 +1,26 @@
+name: Build and test (Ninja Release)
+
+on:
+  push:
+    branches:
+      - master
+      - feature/**
+      - bugfix/**
+  pull_request:
+
+jobs:
+  windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Configure (Ninja / Release)
+        run: cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build -j
+
+      - name: Run unit tests
+        run: ctest --test-dir build --output-on-failure
