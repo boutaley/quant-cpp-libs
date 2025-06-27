@@ -39,14 +39,15 @@ TEST(FibonacciCrossCheck, SmallValues)
     }
 }
 
-/* --------  Gestion des entrées invalides  -------- */
-TEST(Fibonacci, NegativeInputThrows)
+/* --------  Invalid input (overflow) -------- */
+TEST(Fibonacci, OverflowThrows)
 {
-    EXPECT_THROW(fibonacci_iterative(-3), std::invalid_argument);
-    EXPECT_THROW(fibonacci_recursive(-3), std::invalid_argument);
-    EXPECT_THROW(fibonacci_memoized(-3), std::invalid_argument);
-    EXPECT_THROW(fibonacci_fast(-3), std::invalid_argument);
+    EXPECT_THROW(fibonacci_iterative(94), std::overflow_error);
+    EXPECT_THROW(fibonacci_recursive(94), std::overflow_error);
+    EXPECT_THROW(fibonacci_memoized(94), std::overflow_error);
+    EXPECT_THROW(fibonacci_fast(94), std::overflow_error);
 }
+
 
 /* --------  Valeur connue « golden »  -------- */
 TEST(FibonacciIterative, KnownValue)
