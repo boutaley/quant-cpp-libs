@@ -55,18 +55,6 @@ The executable prints nanosecond timings for each Fibonacci variant at several i
 
 ---
 
-## Contributing
-
-Issues and pull requests are welcome. Please follow the existing coding style (clang-format defaults) and ensure
-
-```bash
-cmake --build build --target check
-```
-
-passes before opening a PR.
-
----
-
 ## License
 
 Distributed under the MIT License. See `LICENSE` for details.
