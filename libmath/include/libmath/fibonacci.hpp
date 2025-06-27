@@ -3,12 +3,15 @@
 #include <optional>
 
 
-namespace fibo {
+namespace by_fibonacci {
 
-	uint64_t fibonacci_iterative(int n);
-	uint64_t fibonacci_recursive(int n);
-	uint64_t fibonacci_memoized(int n);
-	uint64_t fibonacci_memoized(int n, std::optional<std::vector<int>>& memo);
-	uint64_t fibonacci_fast(int n);
+	// O(n)
+	uint64_t fibonacci_iterative(uint64_t n);
+	// O(2^n)
+	uint64_t fibonacci_recursive(uint64_t n);
+	// O(n)
+	uint64_t fibonacci_memoized(uint64_t n);
+	// O(logn)
+	uint64_t fibonacci_fast(uint64_t n);
 
 }

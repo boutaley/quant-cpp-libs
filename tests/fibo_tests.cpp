@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <libmath/fibonacci.hpp>   
 
-using namespace fibo;              
+using namespace by_fibonacci;
 
 /* --------  Cas de base  -------- */
 TEST(FibonacciIterative, BaseCases)
@@ -31,7 +31,7 @@ TEST(FibonacciFast, BaseCases)
 /* --------  Valeurs petites / croisées  -------- */
 TEST(FibonacciCrossCheck, SmallValues)
 {
-    for (int n = 0; n <= 15; ++n)
+    for (uint64_t n = 0; n <= 15; ++n)
     {
         EXPECT_EQ(fibonacci_iterative(n), fibonacci_recursive(n));
         EXPECT_EQ(fibonacci_iterative(n), fibonacci_memoized(n));

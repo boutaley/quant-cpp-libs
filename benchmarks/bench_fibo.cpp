@@ -1,29 +1,29 @@
 #include <benchmark/benchmark.h>
 #include <libmath/fibonacci.hpp>
 
-using namespace fibo;   // raccourci
+using namespace by_fibonacci;   
 
-// Fonction de bench pour la version itérative
+// Bench function for iterative version O(n)
 static void BM_FiboIterative(benchmark::State& state)
 {
     for (auto _ : state)
         benchmark::DoNotOptimize(fibonacci_iterative(state.range(0)));
 }
 
-// Fonction de bench pour la version recursive
+// Bench function for recursive version O(2^n)
 static void BM_FiboRecursive(benchmark::State& state)
 {
     for (auto _ : state)
         benchmark::DoNotOptimize(fibonacci_recursive(state.range(0)));
 }
 
-// Fonction de bench pour la version memoized
+// Bench function for memoized version O(n)
 static void BM_FiboMemoized(benchmark::State& state)
 {
     for (auto _ : state)
         benchmark::DoNotOptimize(fibonacci_memoized(state.range(0)));
 }
-// Fonction de bench pour la version fast
+// Bench function for fast version O(logn)
 static void BM_FiboFast(benchmark::State& state)
 {
     for (auto _ : state)
