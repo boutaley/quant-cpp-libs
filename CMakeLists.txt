@@ -7,6 +7,10 @@ project(quant_workspace LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
+# Enable CTest so add_test() actually registers tests
+include(CTest)
+
 # Add subdirectories
 add_subdirectory(libmath)
 add_subdirectory(benchmarks)
