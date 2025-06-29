@@ -3,6 +3,11 @@
 # Static lib 
 add_library(libmath STATIC
     src/fibonacci.cpp    
+    "src/combinatorics/factorial.cpp"
+    "src/combinatorics/binomial.cpp"
+    "src/combinatorics/multinomial.cpp"
+    "src/combinatorics/permutations.cpp"
+    "src/combinatorics/catalan.cpp"
 )
 
 # Public headers

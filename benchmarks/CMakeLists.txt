@@ -22,6 +22,12 @@ target_link_libraries(bench_fibo
         benchmark        
 )
 
+add_executable(bench_factorial bench_factorial.cpp)
+target_link_libraries(bench_factorial PRIVATE libmath benchmark)
+
+add_executable(bench_binomial bench_binomial.cpp)
+target_link_libraries(bench_binomial PRIVATE libmath benchmark)
+
 # 3-4. On veut un exécutable Release par défaut
 set_target_properties(bench_fibo PROPERTIES
     CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench
